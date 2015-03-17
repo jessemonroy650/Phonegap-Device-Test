@@ -12,23 +12,23 @@
     // Wait for PhoneGap to load
     document.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady() {
-		document.getElementById('cordova') = device.cordova;
-		document.getElementById('model') = device.model;
-		document.getElementById('platform') = device.platform;
-		document.getElementById('uuid') = device.uuid;
-		document.getElementById('version') = device.version;
+		document.getElementById('cordova').innerHTML = device.cordova;
+		document.getElementById('model').innerHTML = device.model;
+		document.getElementById('platform').innerHTML = device.platform;
+		document.getElementById('uuid').innerHTML = device.uuid;
+		document.getElementById('version').innerHTML = device.version;
     }
     </script>
 </head>
 <body>
-<div class="button button-block button-large"><img align=left src=favicon-48x48.png>Phonegap Media Test</div>
+<div class="button button-block button-large"><img align=left src=favicon-48x48.png>Phonegap Device Test</div>
 <span onclick='navigator.app.exitApp()'><button class="button button-pill button-primary button-large" style="margin:1em;float:right;">Exit</button></span>
 <p style=clear:both; />
 
 <div id=deviceInformation>
 	<div id=c class="button button-block button-royal">cordova <span id=cordova></span></div>
 	<div id=m class="button button-block button-action">model <span id=model></span></div>
-	<div id=p class="button button-block button-primary">platform<span id=platform>platform</span></div>
+	<div id=p class="button button-block button-primary">platform<span id=platform></span></div>
 	<div id=u class="button button-block button-caution"><span id=uuid>uuid</span></div>
 	<div id=v class="button button-block button-highlight"><span id=version>version</span></div>
 </div>
