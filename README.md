@@ -1,2 +1,2 @@
-# Phonegap-Device-Test
-a simple test of Phonegaps's Device API
+# phonegap-device-test
+A simple test of phonegap's Device plugin
