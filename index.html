@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="buttons.css" />
     <style>
-        body {margin:0px;}
+	body {margin:0px;}
+	.hidden {visibility:collapse;display:none;}
+	.expose {visibility:visible;display:block;} /* Here for completeness only. */
+    .copyright {padding:5px;align:left;font-style:italic;font-size:small;}
+	#exitApp {margin:1em;float:right;}
     </style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript">
@@ -15,7 +19,8 @@
 		// hide Exit button. They don't have one on iOS devices.
 		if (device.platform === "iOS") {
 			//alert("got iOS");
-			$("#exitApp").addClass("hidden");
+			// http://www.mzcart.com/javascript-how-to-addremove-css-class-from-a-dom-element/
+			document.getElementById('exitApp').classList.add("hidden");
 		}
 		document.getElementById('cordova').innerHTML = device.cordova;
 		document.getElementById('model').innerHTML = device.model;
@@ -26,8 +31,13 @@
     </script>
 </head>
 <body>
-<div class="button button-block button-large"><img align=left src=favicon-48x48.png>Phonegap Device Test</div>
-<span onclick='navigator.app.exitApp()'><button id=exitApp class="button button-pill button-primary button-large" style="margin:1em;float:right;">Exit</button></span>
+<div class="button button-block button-large">
+    <img align=left src=favicon-48x48.png>
+    Phonegap Device Test
+</div>
+
+<button id=exitApp onclick='navigator.app.exitApp()' class="button button-pill button-primary button-large">Exit</button>
+
 <p style=clear:both; />
 
 <div id=deviceInformation>
