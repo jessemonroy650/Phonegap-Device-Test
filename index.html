@@ -27,6 +27,8 @@
         	/* deals with post-iOS-7 change that covers the status bar */
         	/* http://coenraets.org/blog/2013/09/phonegap-and-cordova-with-ios-7/ */
             document.body.style.marginTop = "20px";
+        } else if (device.platform == 'Android') {
+	        document.getElementById('uuid').style.fontSize = 'medium';
         }
         document.getElementById('cordova').innerHTML = device.cordova;
         document.getElementById('model').innerHTML = device.model;
